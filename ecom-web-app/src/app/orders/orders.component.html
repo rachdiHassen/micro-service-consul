@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Customers List
+    </div>
+    <div class="card-body">
+      <table class="table" *ngIf="orders">
+        <thead>
+        <tr>
+          <th>Id</th> <th>CreatedAt</th> <th>Status</th> <th>Customer Id</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let o of orders">
+          <td>{{o.id}}</td>
+          <td>{{o.createdAt| date:'dd/MM/yy'}}</td>
+          <td>{{o.status}}</td>
+          <td>{{o.customerId}}</td>
+          <td class="btn btn-success" (click)="handleOrderDetails(o)">Order Details</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
